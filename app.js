@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 mongoose.connect(process.env.Mongo_URL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, () => {
-    console.log('connected to DB')
+    console.log('connected to Database');
 });
 
 mongoose.set('strictQuery', true);
