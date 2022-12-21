@@ -1,23 +1,23 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const router = require("../laundry-cart/routes/routes");
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
-app.use('/', router); 
+app.use(express.urlencoded({ extended: true }));
 const dotenv = require("dotenv");
 dotenv.config();
+const registerRoute = require("./routes/register");
+const loginRoute = require("./routes/login");
+const orderRoute = require("./routes/orders");
+const cors = require("cors");
 
+mongoose.set('strictQuery', true);
 mongoose.connect(process.env.Mongo_URL, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log('connected to DB')
 });
 
-// mongoose.connect("mongodb://localhost:27017/laundryCart");
-
-
-mongoose.set('strictQuery', true);
-
+app.use(cors("*"));
+app.use('/register', registerRoute);
+app.use('/login', loginRoute);
+app.use('/orders', orderRoute);
 
 app.listen(5000, () => console.log("Server is up at 5000"))
