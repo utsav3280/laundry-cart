@@ -1,0 +1,19 @@
+#right_part section{
+    width: 730px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#register-fields p{
+    color: var(--button-1);
+    text-align: center;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    margin-top: 50px;
+}
+
+#register-fields button{
+    margin-left: 310px;
+    margin-bottom: 50px;
+}

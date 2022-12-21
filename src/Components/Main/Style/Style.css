@@ -1,0 +1,81 @@
+:root{
+    --logo-color:#5861AE;
+    --nav-border:#E3E3E3;
+    --footer-background:#182838;
+    --header-background:#00000029;
+    --signin-part:#a8aff61a;
+    --footer-part1:#F8F9FF;
+    --description-color:#565657;
+    --button-1:#4552C1;
+    --signin-background:#8c96f21a;
+    --footer-letters:#3D3D43;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#main-part{
+    width: 100%;
+    height: 585px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transition: 1s all ease-in-out;
+}
+
+#main-part #border{
+    position: absolute;
+    width: 50px;
+    height: 150px;
+    border-right: 3px solid var(--logo-color);
+    bottom: 460px;
+    left: 715px;
+
+}
+
+#main-part2{
+    width: 100%;
+    height: 585px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    transition: 1s all ease-in-out;
+}
+#main-part2 h1{
+    font-size: 4rem;
+}
+#main-part2 #service{
+    font-size: 4rem;
+    margin-top: 100px;
+}
+#main-part2 #account_msg{
+    margin-top: 160px;
+}
+#main-part2 #border{
+    position: absolute;
+    width: 50px;
+    height: 150px;
+    border-right: 3px solid var(--logo-color);
+    bottom: 450px;
+    left: 328px;
+}
+#main-part button{
+    cursor: pointer;
+}
+
+#main-part2 #dry{
+    display: block;
+}
+
+#one, #two{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#two{
+    background-color: var(--footer-part1);
+}

@@ -1,0 +1,43 @@
+:root{
+  --logo-color:#5861AE;
+  --nav-border:#E3E3E3;
+  --footer-background:#182838;
+  --header-background:#00000029;
+  --signin-part:#a8aff61a;
+  --footer-part1:#F8F9FF;
+  --description-color:#565657;
+  --button-1:#4552C1;
+  --signin-background:#8c96f21a;
+  --footer-letters:#3D3D43;
+  --dialog-store-loc:#F4F9FF;
+}
+
+
+
+body{
+   margin: 0;
+   padding: 0;
+}
+
+
+::-webkit-scrollbar {
+   width: 10px;
+ }
+ 
+ ::-webkit-scrollbar-track {
+   background: #f1f1f1;
+ }
+ 
+ 
+ ::-webkit-scrollbar-thumb {
+   background: rgb(231, 204, 204);
+   border-radius: 5px;
+ }
+ 
+ 
+ ::-webkit-scrollbar-thumb:hover {
+   background: #555;
+ }
+ 
+ 
+ 
