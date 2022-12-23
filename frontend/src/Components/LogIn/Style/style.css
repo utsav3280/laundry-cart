@@ -1,0 +1,40 @@
+#right_part{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#right_part h2{
+    color: var(--button-1);
+    margin-bottom: 30px;
+}
+
+#right_part button{
+    color: white;
+    background-color: var(--button-1);
+    border: none;
+    margin-top: 40px;
+    align-self: center;
+}
+
+#right_part #child{
+    margin-bottom: 60px;
+}
+
+#right_part #password_msg{
+    margin-top: 12px;
+    text-transform: capitalize;
+    text-align: right;
+    color: var(--button-1);
+}
+
+#right_part button{
+    width: 115px;
+    height: 30px;
+    font-size: 0.9rem;
+    border-radius: 3px;
+    color: white;
+    background-color: var(--button-1);
+    border: none;
+    margin-top: 40px;
+    align-self: center;
+}

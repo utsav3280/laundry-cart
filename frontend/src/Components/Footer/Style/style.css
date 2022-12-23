@@ -1,0 +1,73 @@
+footer{
+    width: 100%;
+    border-top: 2px solid var(--logo-color);
+    color: var(--logo-color);
+    text-transform: capitalize;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#general_info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: var(--footer-background);
+}
+
+#about_us{
+    height: 10vh;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#general{
+    width: 33%;
+    height: 15vh;
+    margin: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#general div{
+    height: 15vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+
+}
+#social_media{
+    height: 5vh;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    letter-spacing: 1px;
+}
+#icons{
+    margin-left: 15px;
+    color: #5861AE;
+    margin-top: 16px;
+}
+
+#referral{
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--signin-part);
+}
+
+footer #referral p{
+    font-size: 0.6rem;
+    margin-top: 8px;
+    color: var(--footer-letters);
+  }
+  
+footer #referral h3, p{
+      margin-bottom: 1px;
+      margin-top: 0;
+  }
+  

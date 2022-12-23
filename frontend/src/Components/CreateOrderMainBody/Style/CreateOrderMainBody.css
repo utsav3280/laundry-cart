@@ -1,0 +1,12 @@
+.mainWrapper{
+    display: flex;
+    height: 800px;
+}
+.sideNav{
+    background-color: #5861AE;
+    flex-basis: 3%;
+}
+.content{
+    background-color: white;
+    flex-basis: 97%;
+}

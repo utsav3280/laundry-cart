@@ -1,0 +1,13 @@
+table{
+    width: 1295px;
+    height: 628px;
+    border: none;
+}
+thead{
+    background-color: #2F2F2F;
+    color: white;
+}
+th{
+    padding-top: 14px;
+    padding-bottom: 8px;
+}
