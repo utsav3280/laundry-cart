@@ -1,0 +1,73 @@
+.list-container{
+    margin: 25px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.past-order-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin-top: 25px;
+    border: 0.5px solid #EAEDF0;
+}
+
+thead {
+    background-color: black;
+    color: white;
+}
+
+th {
+    padding: 4px;
+    padding-left: 10px;
+}
+
+td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #FAFAFA;
+    border: 0.5px solid #EAEDF0;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+input {
+    /* background: url(../../../public/images/search.svg) top left no-repeat; */
+    border: 0px;
+    border-bottom: 1px solid black;
+    outline: none;
+    padding-left: 20px;
+}
+
+#create-button {
+    background-color: FAFAFA;
+    border: 1px solid #5861AE;
+    border-radius: 4px;
+    opacity: 1;
+    color: #5861AE;
+    margin-right: 20px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+
+.view{
+    cursor: pointer;
+}
+
+#cancel-btn{
+    background-color: white;
+    border: none;
+    color: #EB1717;
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+
+#copyrights{
+    display: flex;
+    justify-content: center;
+    color: #FFFF;
+    align-items: center;
+    height: 5vh;
+    background-color:var(--footer-background);
+}

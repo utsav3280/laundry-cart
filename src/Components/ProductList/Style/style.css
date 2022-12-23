@@ -1,0 +1,183 @@
+#product-listing{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#head-create{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+#head-create h3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   margin: 0;
+}
+
+/* table{
+    background-color: white;
+    width: 1300px;
+    height: 450px;
+    border: 1px solid;
+    margin-left:120px
+} */
+
+/* #headings{
+    margin-top: 30px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 6%;
+} */
+
+/* 
+td{
+    background-color: white;
+}
+table img{
+    width: 28px;
+    height: 28px;
+}
+table input{
+    outline-color: #5861AE;
+}
+table td{
+    margin-bottom: 100px;
+} */
+/* table th, td{
+    width: 100px;
+} */
+table{
+    margin-top: 70px;
+  margin-left: 180px;
+}
+table img{
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+#table-head-div{
+    width: 800px;
+
+    background-color: #383737;
+    color: white;
+}
+#one-data{
+padding-left: 50px;
+}
+td{
+    /* border-bottom: 1px solid ; */
+    text-align: center;
+}
+td{
+    height: 60px;
+}
+
+th{
+    height: 40px;
+    background-color: black;
+    color:white;
+    column-gap: 0;
+}
+tr:nth-child(even){
+    background-color: aliceblue;
+}
+#wash-types{
+    /* display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px; */
+}
+
+#draggable-dialog-title{
+    height: 25px;
+    width: 800px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--logo-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dialog-store-info{
+    height: 90px;
+    width: 850px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #F4F9FF;
+
+}
+
+#dialog-store-info div{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-right: 60px;
+}
+
+#order-details-confirm{
+    width: 850px;
+    height: 340px;
+    background-color: aqua;
+}
+
+#address-confirm{
+    width: 850px;
+    height: 170px;
+    background-color: blanchedalmond;
+}
+
+
+
+/* #proceed-dialog{
+    width: 60%;
+    position: absolute;
+    left: 40%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* visibility: hidden; */
+/* }
+#close-dialog{
+    visibility: hidden;
+    position: absolute;
+}
+
+#proceed-dialog #dialog-summary{
+    width: 100%;
+    color: white;
+    background-color: var(--logo-color);
+}
+#proceed-dialog #dialog-title h2{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#proceed-dialog #dialog-title{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#proceed-dialog #dialog-store-info{
+    width: 100%;
+    color: #1B2734;
+    background-color: var(--dialog-store-loc);
+}
+
+#proceed-dialog #dialog-store-info{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    /* justify-content: space-between; */
+   
