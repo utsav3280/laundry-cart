@@ -1,0 +1,204 @@
+#product-listing{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#head-create{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+#head-create h3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   margin: 0;
+}
+
+
+#main-pastorder{
+    height: 622px;
+}
+
+#product-list-section1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#product-list-section1 h3{
+    margin-left: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+table img{
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+#table-head-div{
+    width: 800px;
+
+    background-color: #383737;
+    color: white;
+}
+#one-data{
+padding-left: 50px;
+}
+td, th{
+    /* border-bottom: 1px solid ; */
+    text-align: left;
+    padding-left: 40px;
+}
+td{
+    height: 40px;
+}
+
+th{
+    height: 40px;
+    background-color: black;
+    color:white;
+    border-collapse: collapse;
+}
+tr:nth-child(even){
+    background-color: aliceblue;
+}
+#product-list-main{
+    display: flex;
+    width: 100%;
+    height: 622px;
+    background-color: #B9C0FD1A;
+}
+#main-pastorder{
+    width: 100%;
+    
+}
+#draggable-dialog-title{
+    height: 25px;
+    width: 800px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--logo-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dialog-store-info{
+    height: 90px;
+    width: 850px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #F4F9FF;
+
+}
+
+#dialog-store-info div{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-right: 60px;
+}
+
+#order-details-confirm{
+    width: 850px;
+    height: 340px;
+    /* background-color: aqua; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+#address-confirm{
+    width: 850px;
+    height: 170px;
+    background-color: blanchedalmond;
+}
+#order-details-summary{
+    width: 80%;
+    height: 50px;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
+#product-list-table{
+    width: 100%;
+}
+
+#product-list-section{
+    width: 100%;
+}
+
+#product-table-section{
+    flex-basis: 97%;
+    padding: 20px;
+}
+#sidebar-productlist{
+    flex-basis: 3%;
+}
+
+.wash-type-icons{
+    width: 35px;
+    height: 35px;
+    margin: 10px 80px 10px 0px;
+    color: #7a7979;
+}
+.wash-type-icons:last-child(){
+    /* margin-right: 0; */
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.wash-type-icons:hover{
+    cursor: pointer;
+    color: #5861AE;
+}
+
+.reset-btn {
+    width: 85px;
+    height: 30px;
+    font-size: 0.9rem;
+    background-color: transparent;
+    border-radius: 3px;
+    color: var(--button-1);
+    border-color: var(--button-1);
+    cursor: pointer;
+}
+
+.proceed-btn{
+    width: 85px;
+    height: 30px;
+    font-size: 0.9rem;
+    background-color: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+    background-color: #5861AE;
+    color: white;
+    border: none;
+    margin-top: 30px;
+}
+
+#cancel-btn{
+    float: right;
+    margin-top: 30px;
+    margin-right: 15px;
+}
+
+#confirm-order-table{
+    width: 100%;
+}
+
+#confirm-order-table td{
+    border-bottom: 1px solid gray;
+    padding: 10px 0 10px 30px;
+}

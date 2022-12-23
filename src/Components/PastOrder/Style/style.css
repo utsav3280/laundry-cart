@@ -1,0 +1,35 @@
+#past-order-component{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+}
+/* #main-in-past-order{
+    width: 100%;
+    height: 622px;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
+#footer-in-past-order{
+    wi
+} */
+
+#past-order-list{
+    display: flex;
+    width: 100vw;
+    /* flex-basis: 95%; */
+}
+
+#table-list{
+ flex-basis: 97%;
+}
+#sidebar-list{
+    flex-basis: 3%;
+}
+
+.past-order-table{
+    /* display: flex;
+    justify-content: space-between; */
+    width: 100%;
+}
