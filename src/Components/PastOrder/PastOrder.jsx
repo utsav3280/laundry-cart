@@ -56,32 +56,32 @@ const PastOrder = () => {
     );
     window.location.reload();
   };
-  // const style = {
-  //   borderRadius: "10px",
-  //   display: "flex",
-  //   flexDirection: "column",
-  //   justifyContent: "flex-start",
-  //   alignItems: "center",
-  //   position: "absolute",
-  //   top: "50%",
-  //   left: "50%",
-  //   transform: "translate(-50%, -50%)",
-  //   width: 250,
-  //   bgcolor: "background.paper",
-  //   boxShadow: 24,
-  //   p: 4,
-  // };
-  // const [warning, setWarning] = useState(false);
-  // const [orderNum, setOrderNum] = useState("");
-  // const warningOpen = (e) => {
-  //   setOrderNum(e.target.value);
-  //   console.log(orderNum);
-  //   setWarning(true);
-  // };
-  // const warningClose = () => setWarning(false);
+  const style = {
+    borderRadius: "10px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 250,
+    bgcolor: "background.paper",
+    boxShadow: 24,
+    p: 4,
+  };
+  const [warning, setWarning] = useState(false);
+  const [orderNum, setOrderNum] = useState("");
+  const warningOpen = (e) => {
+    setOrderNum(e.target.value);
+    console.log(orderNum);
+    setWarning(true);
+  };
+  const warningClose = () => setWarning(false);
   return (
     <div id="past-order-component">
-      {/* <Modal
+      <Modal
         open={warning}
         onClose={warningClose}
         aria-labelledby="modal-modal-title"
@@ -111,7 +111,7 @@ const PastOrder = () => {
             Proceed
           </Button>
         </Box>
-      </Modal> */}
+      </Modal>
       <section>
         <Header />
       </section>
@@ -158,7 +158,7 @@ const PastOrder = () => {
                     <td>
                       {order.status !== "cancelled" ? (
                         <button
-                          onClick={cancel}
+                          onClick={warningOpen}
                           value={order._id}
                           id="cancel-btn"
                         >
