@@ -7,6 +7,7 @@ export default function Logout({ showModal, setShowModal }) {
   const navigate = useNavigate();
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("name");
     navigate("/");
   };
   return (

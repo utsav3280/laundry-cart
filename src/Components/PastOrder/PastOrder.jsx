@@ -6,11 +6,34 @@ import { Link } from "react-router-dom";
 import Header from "../HeaderTwo/HeaderTwo";
 import Copyright from "./../Copyright/Copyright";
 import Sidebar from "../Sidebar/Sidebar";
-import { Button, Modal, Box } from "@mui/material";
+import { VscChromeClose } from "react-icons/vsc";
+import Draggable from "react-draggable";
+import Paper from "@mui/material/Paper";
+import {
+  Button,
+  DialogTitle,
+  DialogActions,
+  Modal,
+  Box,
+  Dialog,
+  TextField,
+} from "@mui/material";
+import { IoSearchOutline } from "react-icons/io5";
 
 const PastOrder = () => {
   const [orderList, setOrderList] = useState([]);
   const fixedCharge = 60;
+
+  function PaperComponent(props) {
+    return (
+      <Draggable
+        handle="#draggable-dialog-title"
+        cancel={'[class*="MuiDialogContent-root"]'}
+      >
+        <Paper {...props} />
+      </Draggable>
+    );
+  }
 
   useEffect(() => {
     axios
@@ -22,6 +45,7 @@ const PastOrder = () => {
       .then((res) => setOrderList(res.data.orders))
       .catch((err) => console.log(err));
   }, []);
+  const [orderData, setOrderData] = useState([]);
 
   const displayOrder = async (e) => {
     let id = e.target.value;
@@ -37,8 +61,16 @@ const PastOrder = () => {
       )
       .then((res) => {
         console.log(res.data.orders);
+        setOrderData(res.data.orders[0].OrderDetails[0].reqData);
+        console.log(res.data.orders[0].OrderDetails[0].reqData);
+        setTotal(res.data.orders[0].price);
+        setOrderNum(res.data.orders[0]._id);
+        setOrderStatus(res.data.orders[0].status);
+        console.log(res.data.orders[0].status);
       })
       .catch((err) => console.log(err));
+    setOpen(true);
+    setId("hi");
   };
 
   const [id, setId] = useState("");
@@ -54,6 +86,12 @@ const PastOrder = () => {
         },
       }
     );
+    // if (id) {
+    //   setId("");
+    // }
+    // if (orderNum) {
+    //   setOrderNum("");
+    // }
     window.location.reload();
   };
   const style = {
@@ -79,8 +117,121 @@ const PastOrder = () => {
     setWarning(true);
   };
   const warningClose = () => setWarning(false);
+
+  const [open, setOpen] = useState(false);
+
+  const [total, setTotal] = useState(0);
+
+  const [cancelId, setCancelId] = useState("");
+
+  const [orderStatus, setOrderStatus] = useState("");
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  //JSX
   return (
     <div id="past-order-component">
+      <Dialog
+        PaperProps={{
+          sx: {
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: "45%",
+            m: 0,
+            maxWidth: 900,
+            maxHeight: 713,
+          },
+        }}
+        open={open}
+        onClose={handleClose}
+        PaperComponent={PaperComponent}
+        aria-labelledby="draggable-dialog-title"
+      >
+        <div>
+          <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
+            <h3>Summary</h3>
+            <h3 onClick={handleClose}>
+              <VscChromeClose style={{ cursor: "pointer" }} />
+            </h3>
+          </DialogTitle>
+          <div id="dialog-store-info">
+            <div style={{ marginLeft: "30px" }}>
+              <h4>Store location :</h4>
+              <p>Jp nagar</p>
+            </div>
+            <div>
+              <h4>Store address :</h4>
+              <p>Near phone booth, 10th street</p>
+            </div>
+            <div>
+              <h4>Phone :</h4>
+              <p>+91 9180507211</p>
+            </div>
+          </div>
+          <div id="order-details-confirm">
+            <table id="confirm-order-table">
+              <tbody>
+                <tr>Order Details</tr>
+                {orderData.map((ele, id) => {
+                  return (
+                    <tr key={id}>
+                      <td>{ele.product}</td>
+
+                      <td>{ele.washOption + " "}</td>
+                      <td>{ele.quantity + " x " + ele.serviceSum + "   = "}</td>
+                      <td style={{ color: "#5861AE" }}>{ele.totalPrice}</td>
+                    </tr>
+                  );
+                })}
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>subtotal : </td>
+                  <td>{total}</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>Pickup charges : </td>
+                  <td>{60}</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>Total price : </td>
+                  <td>{total + 60}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="address-confirm"></div>
+          <DialogActions
+            style={{
+              backgroundColor: "#F4F4F4",
+              height: "40px",
+              marginRight: "20px",
+            }}
+          >
+            <Button
+              disabled={orderStatus === "cancelled" ? true : false}
+              sx={{ backgroundColor: "red" }}
+              variant="contained"
+              value={orderNum}
+              onClick={warningOpen}
+            >
+              Cancel
+            </Button>
+          </DialogActions>
+        </div>
+      </Dialog>
+
       <Modal
         open={warning}
         onClose={warningClose}
@@ -101,7 +252,12 @@ const PastOrder = () => {
             <button onClick={warningClose}>close</button>
           </div>
           <p style={{ marginBottom: "0" }}>Are you sure want to cancel</p>
-          <p style={{ marginTop: "0" }}>the order No : {orderNum} </p>
+          {orderNum && (
+            <p style={{ marginTop: "0" }}>the order No : {orderNum}</p>
+          )}
+          {cancelId && (
+            <p style={{ marginTop: "0" }}>the order No : {cancelId}</p>
+          )}
           <Button
             sx={{ backgroundColor: "#5861AE" }}
             variant="contained"
@@ -120,6 +276,18 @@ const PastOrder = () => {
           <Sidebar />
         </div>
         <div id="table-list">
+          <div id="product-list-section1">
+            <h3>Create order</h3>
+            <button>
+              <Link to={"/createOrder"}>Create</Link>
+            </button>
+            <TextField
+              type={"text"}
+              label={<IoSearchOutline />}
+              variant="standard"
+            />
+          </div>
+
           <table
             className="past-order-table"
             cellSpacing={0}
@@ -144,7 +312,15 @@ const PastOrder = () => {
                   <tr key={idx}>
                     <td>
                       {" "}
-                      <button onClick={displayOrder} value={order._id}>
+                      <button
+                        onClick={displayOrder}
+                        value={order._id}
+                        style={{
+                          border: "none",
+                          backgroundColor: "transparent",
+                          cursor: "pointer",
+                        }}
+                      >
                         {order._id}
                       </button>{" "}
                     </td>
@@ -160,7 +336,13 @@ const PastOrder = () => {
                         <button
                           onClick={warningOpen}
                           value={order._id}
-                          id="cancel-btn"
+                          // id="cancel-btn"
+                          style={{
+                            border: "none",
+                            backgroundColor: "transparent",
+                            color: "red",
+                            cursor: "pointer",
+                          }}
                         >
                           Cancel Order
                         </button>
@@ -170,6 +352,8 @@ const PastOrder = () => {
                     </td>
                     <td>
                       <img
+                        onClick={displayOrder}
+                        value={orderNum}
                         src="https://cdn2.iconfinder.com/data/icons/picol-vector/32/view-512.png"
                         height="15px"
                         width="15px"

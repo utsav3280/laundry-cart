@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 function SignIn() {
   const [view, setView] = useState(true);
   const [msg, setMsg] = useState("");
+  const [validate, setValidate] = useState(false);
   const navigate = useNavigate();
   const [details, setDetails] = useState({
     username: "",
@@ -33,6 +34,9 @@ function SignIn() {
     console.log("hello");
     await Axios.post("http://localhost:5000/login", details)
       .then(async (res) => {
+        if (res.data.status === "Failed") {
+          setValidate(true);
+        }
         console.log(res.data.message);
         if (res.data.message === "Login successfull") {
           if (res.data.message !== "Login successfull") {
@@ -50,6 +54,7 @@ function SignIn() {
             })
             .catch((err) => console.log(err));
           localStorage.setItem("token", res.data.token);
+          localStorage.setItem("name", res.data.name);
         }
       })
       .catch((err) => console.log(err));
@@ -125,6 +130,7 @@ function SignIn() {
               )}
             </div>
             <p id="password_msg">forget password?</p>
+            {validate && <p style={{ color: "red" }}>Incorrect credentials</p>}
             <button type="submit">Sign In</button>
           </form>
         </div>

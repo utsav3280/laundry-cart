@@ -15,3 +15,9 @@
     margin-bottom: 30px;
     padding: "10px 100%"
 }
+
+#side-navbar img:hover{
+    width: 18px;
+    height: 18px;
+    background-color: white;
+}

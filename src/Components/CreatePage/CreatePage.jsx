@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Copyright from "../Copyright/Copyright";
-import Header from "../Header/Header";
 import Sidebar from "./../Sidebar/Sidebar";
 import { IoSearchOutline } from "react-icons/io5";
 import { TextField } from "@mui/material";
@@ -9,6 +8,7 @@ import { Link } from "react-router-dom";
 import PastOrder from "../PastOrder/PastOrder";
 import Axios from "axios";
 import Dialog from "../Dialog/Dialog";
+import Header from "../HeaderTwo/HeaderTwo";
 function CreatePage() {
   return (
     <div>

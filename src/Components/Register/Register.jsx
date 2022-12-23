@@ -28,6 +28,7 @@ function Register(registered) {
     state: "",
     pincode: "",
   });
+  const [check, setCheck] = useState(false);
   const regex =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   const phoneRegex =
@@ -109,13 +110,21 @@ function Register(registered) {
     }
   };
   const [view, setView] = useState(true);
+  const [userExist, setUserExist] = useState(false);
+  const [failMsg, setFailMsg] = useState("");
 
   const createPost = async (e) => {
     e.preventDefault();
     await Axios.post("http://localhost:5000/register", user)
       .then((res) => {
         console.log(res.data.message);
-        navigate("/");
+        setFailMsg(res.data.message);
+
+        if (res.data.status !== "Failed") {
+          navigate("/");
+        } else {
+          setUserExist(true);
+        }
       })
       .catch((err) => console.log(err));
 
@@ -287,12 +296,23 @@ function Register(registered) {
               </section>
               <p>
                 <span>
-                  <input type={"checkbox"} />
+                  <input type={"checkbox"} onClick={() => setCheck(!check)} />
                 </span>{" "}
                 I agree to Terms & Conditions receiving marketing and promotion
                 materials
               </p>
-              <button onClick={registered}>Register</button>
+              {userExist && (
+                <p style={{ color: "red", textDecoration: "none" }}>
+                  {failMsg}
+                </p>
+              )}
+              <button
+                disabled={check ? false : true}
+                style={{ backgroundColor: check ? "#5861AE" : "gray" }}
+                onClick={registered}
+              >
+                Register
+              </button>
             </div>
           </form>
         </div>
