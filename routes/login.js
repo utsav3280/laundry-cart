@@ -6,6 +6,14 @@ const validator = require("validator");
 const dotenv = require("dotenv");
 dotenv.config();
 
+// router.get("/", async(req, res) => {
+//   try{
+//     //  const user = await Users.findOne()
+//   }catch(){
+
+//   }
+// })
+
 router.post("/", async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -36,6 +44,7 @@ router.post("/", async (req, res) => {
             status: "success",
             message: "Login successfull",
             token: token,
+            name: user.name,
           });
         }
 
@@ -52,7 +61,7 @@ router.post("/", async (req, res) => {
     }
   } catch (error) {
     res.json({
-      status: "catch",
+      status: "Failed",
       message: error.message,
     });
   }

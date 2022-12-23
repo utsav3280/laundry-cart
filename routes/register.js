@@ -28,27 +28,35 @@ router.post("/", async (req, res) => {
           },
         });
         return res.json({
-          message: "success",
+          status: "Success",
+          message: "welcome to laundry service",
           // redirecting
         });
       });
     } else {
       if (userEmail && userPhone) {
         return res.json({
+          status: "Failed",
           message: "email and phone already exists",
         });
       } else if (userEmail) {
         return res.json({
+          status: "Failed",
+
           message: "email already exists",
         });
       } else {
         return res.json({
+          status: "Failed",
+
           message: "number already exists",
         });
       }
     }
   } catch (error) {
     res.json({
+      status: "Failed",
+
       message: error.message,
     });
   }
