@@ -115,7 +115,7 @@ function Register() {
 
   const createPost = async (e) => {
     e.preventDefault();
-    await Axios.post("http://localhost:5000/register", user)
+    await Axios.post("https://laundry-cart-backend-z3lt.onrender.com/register", user)
       .then((res) => {
         console.log(res.data.message);
         setFailMsg(res.data.message);

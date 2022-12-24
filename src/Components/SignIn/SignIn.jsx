@@ -32,7 +32,7 @@ function SignIn() {
   const login = async (e) => {
     e.preventDefault();
     console.log("hello");
-    await Axios.post("http://localhost:5000/login", details)
+    await Axios.post("https://laundry-cart-backend-z3lt.onrender.com/login", details)
       .then(async (res) => {
         if (res.data.status === "Failed") {
           setValidate(true);
@@ -42,7 +42,7 @@ function SignIn() {
           if (res.data.message !== "Login successfull") {
             setMsg(res.data.message);
           }
-          await Axios.get("http://localhost:5000/orders", {
+          await Axios.get("https://laundry-cart-backend-z3lt.onrender.com/orders", {
             headers: {
               Authorization: res.data.token,
             },

@@ -37,7 +37,7 @@ const PastOrder = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/orders", {
+      .get("https://laundry-cart-backend-z3lt.onrender.com/orders", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -51,7 +51,7 @@ const PastOrder = () => {
     let id = e.target.value;
     await axios
       .post(
-        "http://localhost:5000/orders/id",
+        "https://laundry-cart-backend-z3lt.onrender.com/orders/id",
         { id },
         {
           headers: {
@@ -78,7 +78,7 @@ const PastOrder = () => {
   const cancel = async (e) => {
     let id = e.target.value;
     await axios.put(
-      "http://localhost:5000/orders/id",
+      "https://laundry-cart-backend-z3lt.onrender.com/orders/id",
       { id },
       {
         headers: {

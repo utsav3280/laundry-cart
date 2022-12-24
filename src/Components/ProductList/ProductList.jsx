@@ -140,7 +140,7 @@ function ProductList() {
     // }
     //AXIOS
     if (data.length !== 0) {
-      await axios.post("http://localhost:5000/orders/create", data, {
+      await axios.post("https://laundry-cart-backend-z3lt.onrender.com/orders/create", data, {
         headers: {
           authorization: localStorage.getItem("token"),
         },
