@@ -17,13 +17,13 @@ function CreatePage() {
         <section>
           <Sidebar />
         </section>
-        <section>
+        <section style={{height: "100vh"}}>
           <div id="home-create">
             <div id="head-create">
               <section>
                 <h3>Orders | 0</h3>
               </section>
-              <section>
+              {/* <section id="search-bar">
                 <TextField
                   variant="standard"
                   type={"text"}
@@ -32,13 +32,10 @@ function CreatePage() {
                   label={<IoSearchOutline />}
                   sx={{ marginRight: "50px" }}
                 />
-              </section>
+              </section> */}
             </div>
-            {/* <Dialog /> */}
-            {/* {nav ? <button>create</button> : <PastOrder />} */}
-            {/* <button>
-            </button> */}
-            <Link to={"/createOrder"}>Create</Link>
+            <p className="no-orders-text">No Orders Available</p>
+            <Link to={"/createOrder"}><button id="create-btn">Create</button></Link>
           </div>
         </section>
       </div>

@@ -18,18 +18,41 @@
 #past-order-list{
     display: flex;
     width: 100vw;
+    height: 100%;
     /* flex-basis: 95%; */
 }
 
 #table-list{
  flex-basis: 97%;
+ /* height: 100%; */
+ display: inline-block;
+ overflow: scroll;
 }
 #sidebar-list{
     flex-basis: 3%;
+    height: 100%;
+    background-color: var(--logo-color);
 }
 
 .past-order-table{
     /* display: flex;
     justify-content: space-between; */
     width: 100%;
+    /* height: 100vh; */
+    /* overflow-y: scroll;
+    max-height: 400px; */
+    table-layout: fixed;
+    font-size: 0.7em;
+}
+/* 
+#copyright-pastorder{
+    position: sticky;
+    bottom: 0px;
+} */
+
+#product-table-section{
+    display: inline-block;
+    overflow: scroll;
+    /* width: 300px; */
+
 }

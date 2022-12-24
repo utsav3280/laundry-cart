@@ -72,18 +72,17 @@ function SignIn() {
           </p>
 
           <p id="account_msg">don't have an account ?</p>
-
-          <button>
-            <Link to={"/register"}>Register</Link>
-          </button>
+          <Link to={"/register"}>
+            <button>Register</button>
+          </Link>
         </div>
-        <div id="border"></div>
+        {/* <div id="border"></div> */}
         <div id="right_part">
           <h2>SIGN IN</h2>
           <form onSubmit={login}>
             <div id="child">
               <TextField
-                error={msg !== "" ? true : false}
+                error={validate ? true : false}
                 onChange={handleChange}
                 value={details.username}
                 type="text"
@@ -93,20 +92,20 @@ function SignIn() {
                   width: 300,
                   backgroundColor: "transparent",
                 }}
-                label={msg !== "" ? msg : "Email / Name"}
+                label={validate ? "Incorrect credentials" : "Email / Name"}
                 variant="standard"
               />
             </div>
             <div>
               <TextField
-                // error={true}
+                error={validate ? true : false}
                 onChange={handleChange}
                 value={details.password}
                 type={view ? "password" : "text"}
                 name="password"
                 sx={{ width: 275 }}
-                label="Password"
                 variant="standard"
+                label={validate ? "Incorrect credentials" : "Password"}
               />
 
               {view ? (
@@ -130,7 +129,6 @@ function SignIn() {
               )}
             </div>
             <p id="password_msg">forget password?</p>
-            {validate && <p style={{ color: "red" }}>Incorrect credentials</p>}
             <button type="submit">Sign In</button>
           </form>
         </div>

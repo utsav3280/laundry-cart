@@ -262,11 +262,11 @@ function ProductList() {
           <div id="order-details-confirm">
             <table id="confirm-order-table">
               <tbody>
-                <tr>Order Details</tr>
+                <tr><strong>-----ORDER DETAILS</strong></tr>
                 {data.length !== 0
                   ? data.reqData.map((ele, id) => {
                       return (
-                        <tr key={id}>
+                        <tr key={id} style={{borderBottom: "10px solid black"}}>
                           <td>{ele.product}</td>
 
                           <td>{ele.washOption + " "}</td>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Style/style.css";
 
 function Header() {
@@ -12,7 +13,7 @@ function Header() {
           <p>home</p>
           <p>pricing</p>
           <p>career</p>
-          <p id="avatar">sign in</p>
+          <Link to="/" style={{textDecoration: "none"}}><p id="avatar">sign in</p></Link>
         </div>
       </header>
     </div>

@@ -181,7 +181,7 @@ const PastOrder = () => {
                 <tr>Order Details</tr>
                 {orderData.map((ele, id) => {
                   return (
-                    <tr key={id}>
+                    <tr key={id} >
                       <td>{ele.product}</td>
 
                       <td>{ele.washOption + " "}</td>
@@ -231,7 +231,6 @@ const PastOrder = () => {
           </DialogActions>
         </div>
       </Dialog>
-
       <Modal
         open={warning}
         onClose={warningClose}
@@ -248,12 +247,12 @@ const PastOrder = () => {
               padding: "0",
             }}
           >
-            <p>Alert</p>
-            <button onClick={warningClose}>close</button>
+            <h2 style={{color: "red", marginTop:"-5px", cursor: "pointer"}}>Alert</h2>
+            <button onClick={warningClose} style={{border:"none", backgroundColor:"white", marginTop:"-30px", fontWeight: "bold", cursor: "pointer"}}>X</button>
           </div>
-          <p style={{ marginBottom: "0" }}>Are you sure want to cancel</p>
+          <p style={{ marginBottom: "5px" }}>Are you sure want to cancel</p>
           {orderNum && (
-            <p style={{ marginTop: "0" }}>the order No : {orderNum}</p>
+            <p style={{ marginBottom: "10px" }}>the order No : {orderNum}</p>
           )}
           {cancelId && (
             <p style={{ marginTop: "0" }}>the order No : {cancelId}</p>
@@ -277,9 +276,9 @@ const PastOrder = () => {
         </div>
         <div id="table-list">
           <div id="product-list-section1">
-            <h3>Create order</h3>
-            <button>
-              <Link to={"/createOrder"}>Create</Link>
+            <h3 style={{flexBasis: "70%"}}>Create order</h3>
+            <button style={{backgroundColor: "transparent", border: "1px solid #5861AE", borderRadius:"2px" , padding:"4px 20px"}}>
+              <Link to={"/createOrder"} style={{textDecoration: "none", backgroundColor: "transparent", color: "#5861AE"}}>Create</Link>
             </button>
             <TextField
               type={"text"}
@@ -367,7 +366,7 @@ const PastOrder = () => {
           </table>
         </div>
       </section>
-      <section>
+      <section id="copyright-pastorder">
         <Copyright />
       </section>
     </div>

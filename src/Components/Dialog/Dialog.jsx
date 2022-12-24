@@ -17,18 +17,20 @@ export default function Logout({ showModal, setShowModal }) {
           id="myModal"
           style={{
             display: "block",
-            width: 200,
-            padding: 20,
+            width: 120,
+            padding: "10px",
+            borderRadius: "4px"
           }}
         >
           <Modal.Dialog>
             <Modal.Footer>
-              <Button variant="primary" onClick={logout}>
+              <Button variant="primary" onClick={logout} style={{padding: "5px", backgroundColor:"red", color:"white", border:"none", borderRadius: "2px", marginLeft: "5px"}}>
                 Log out
               </Button>
               <Button
                 variant="secondary"
                 onClick={() => setShowModal((prev) => !prev)}
+                style={{padding: "5px", backgroundColor:"blue", color:"white", border:"none", borderRadius: "2px", marginLeft: "15px"}}
               >
                 Close
               </Button>

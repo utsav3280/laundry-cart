@@ -36,7 +36,7 @@ header #nav_links{
     text-transform: capitalize;
 }
 header #nav_links p:hover{
-    background-color: #4552C1;
+    background-color: #5861AE;
 }
 #avatar{
     background-color: var(--logo-color);

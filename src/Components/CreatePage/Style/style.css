@@ -3,3 +3,26 @@
     
 }
 
+#create-btn{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    top: 50%;
+    left: 47%;
+    background-color: white;
+    color: #5861AE;
+    border: 1px solid #5861AE;
+    border-radius: 4px;
+}
+
+.no-orders-text{
+    color: #d3d3d3;
+    position: absolute;
+    top: 43%;
+    left: 46%;
+}
+
+#search-bar{
+    position: absolute;
+    right: 1%;
+}

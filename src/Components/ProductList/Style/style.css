@@ -116,7 +116,7 @@ tr:nth-child(even){
 #address-confirm{
     width: 850px;
     height: 170px;
-    background-color: blanchedalmond;
+    background-color: #F4F9FF;
 }
 #order-details-summary{
     width: 80%;
@@ -147,7 +147,7 @@ tr:nth-child(even){
 .wash-type-icons{
     width: 35px;
     height: 35px;
-    margin: 10px 80px 10px 0px;
+    margin: 5% 8% 5% 0;
     color: #7a7979;
 }
 .wash-type-icons:last-child(){
@@ -199,6 +199,7 @@ input::-webkit-inner-spin-button {
 }
 
 #confirm-order-table td{
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
     padding: 10px 0 10px 30px;
+    background-color: white;
 }

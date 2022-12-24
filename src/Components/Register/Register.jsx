@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 import React from "react";
 import "./Style/style.css";
 import { BsFillLockFill, BsFillUnlockFill } from "react-icons/bs";
@@ -8,7 +8,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-function Register(registered) {
+function Register() {
   const [err, setErr] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -137,6 +137,7 @@ function Register(registered) {
     // localStorage.setItem("district", user.district);
     // localStorage.setItem("pincode", user.pincode);
   };
+  const [ok, setOk] = useState(true);
 
   const locked = () => {
     setView(false);
@@ -157,12 +158,10 @@ function Register(registered) {
           </p>
 
           <p id="account_msg">already have an account ?</p>
-
-          <button>
-            <Link to={"/"}>Sign In</Link>
-          </button>
-
-          <div id="bdr"></div>
+          <Link to={"/"}>
+            <button>Sign In</button>
+          </Link>
+          {/* <div id="bdr"></div> */}
         </div>
         <div id="right_part">
           <h2>REGISTER</h2>
@@ -306,13 +305,13 @@ function Register(registered) {
                   {failMsg}
                 </p>
               )}
-              <button
+              <Button
+                type="submit"
                 disabled={check ? false : true}
                 style={{ backgroundColor: check ? "#5861AE" : "gray" }}
-                onClick={registered}
               >
                 Register
-              </button>
+              </Button>
             </div>
           </form>
         </div>
