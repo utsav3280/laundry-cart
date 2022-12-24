@@ -19,7 +19,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* box-shadow: rgb(181, 181, 181) 10px 5px 5px; */
     -webkit-box-shadow: 0 10px 10px -10px #000000;
     -moz-box-shadow: 0 10px 10px -10px #000000;
     box-shadow: 0 10px 10px -10px #949494;
@@ -55,7 +54,6 @@ header #nav_links p:hover {
 header #nav_links p {
     border-left: 2px solid var(--nav-border);
     height: 7.5vh;
-    /* width: 95px; */
     padding: 0 20px;
     display: flex;
     justify-content: center;

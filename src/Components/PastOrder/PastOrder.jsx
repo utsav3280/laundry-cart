@@ -44,7 +44,7 @@ const PastOrder = () => {
       })
       .then((res) => setOrderList(res.data.orders))
       .catch((err) => console.log(err));
-  }, []);
+  });
   const [orderData, setOrderData] = useState([]);
 
   const displayOrder = async (e) => {
@@ -86,13 +86,8 @@ const PastOrder = () => {
         },
       }
     );
-    // if (id) {
-    //   setId("");
-    // }
-    // if (orderNum) {
-    //   setOrderNum("");
-    // }
-    window.location.reload();
+    handleClose();
+    warningClose();
   };
   const style = {
     borderRadius: "10px",
@@ -134,7 +129,6 @@ const PastOrder = () => {
     setOpen(false);
   };
 
-  //JSX
   return (
     <div id="past-order-component">
       <Dialog
@@ -247,8 +241,8 @@ const PastOrder = () => {
               padding: "0",
             }}
           >
-            <h2 style={{color: "red", marginTop:"-5px", cursor: "pointer"}}>Alert</h2>
-            <button onClick={warningClose} style={{border:"none", backgroundColor:"white", marginTop:"-30px", fontWeight: "bold", cursor: "pointer"}}>X</button>
+            <h2 style={{ color: "red", marginTop: "-5px", cursor: "pointer" }}>Alert</h2>
+            <button onClick={warningClose} style={{ border: "none", backgroundColor: "white", marginTop: "-30px", fontWeight: "bold", cursor: "pointer" }}>X</button>
           </div>
           <p style={{ marginBottom: "5px" }}>Are you sure want to cancel</p>
           {orderNum && (
@@ -276,9 +270,9 @@ const PastOrder = () => {
         </div>
         <div id="table-list">
           <div id="product-list-section1">
-            <h3 style={{flexBasis: "70%"}}>Create order</h3>
-            <button style={{backgroundColor: "transparent", border: "1px solid #5861AE", borderRadius:"2px" , padding:"4px 20px"}}>
-              <Link to={"/createOrder"} style={{textDecoration: "none", backgroundColor: "transparent", color: "#5861AE"}}>Create</Link>
+            <h3 style={{ flexBasis: "70%" }}>Orders | {orderList.length}</h3>
+            <button style={{ backgroundColor: "transparent", border: "1px solid #5861AE", borderRadius: "2px", padding: "4px 20px" }}>
+              <Link to={"/createOrder"} style={{ textDecoration: "none", backgroundColor: "transparent", color: "#5861AE" }}>Create</Link>
             </button>
             <TextField
               type={"text"}
@@ -293,8 +287,8 @@ const PastOrder = () => {
             cellPadding={0}
             border={0}
           >
-            <thead>
-              <th> Order Id</th>
+            <thead style={{ fontSize: "1em" }}>
+              <th>Order Id</th>
               <th>Order Date & Time</th>
               <th>Store Location</th>
               <th>City</th>
@@ -308,7 +302,7 @@ const PastOrder = () => {
             <tbody>
               {orderList.map((order, idx) => {
                 return (
-                  <tr key={idx}>
+                  <tr key={idx} style={{ fontSize: "1.5em" }}>
                     <td>
                       {" "}
                       <button
@@ -318,6 +312,7 @@ const PastOrder = () => {
                           border: "none",
                           backgroundColor: "transparent",
                           cursor: "pointer",
+                          fontWeight: "bold"
                         }}
                       >
                         {order._id}
@@ -328,14 +323,13 @@ const PastOrder = () => {
                     <td>Bangalore</td>
                     <td>9999999999</td>
                     <td>{order.items}</td>
-                    <td>{order.price + fixedCharge}</td>
-                    <td>{order.status}</td>
+                    <td style={{ color: "#5861AE", fontWeight: "1000" }}>{order.price + fixedCharge} Rs</td>
+                    {(order.status === "cancelled") ? <td style={{ color: "red" }}>cancelled</td> : <td>order placed</td>}
                     <td>
                       {order.status !== "cancelled" ? (
                         <button
                           onClick={warningOpen}
                           value={order._id}
-                          // id="cancel-btn"
                           style={{
                             border: "none",
                             backgroundColor: "transparent",
@@ -354,9 +348,7 @@ const PastOrder = () => {
                         onClick={displayOrder}
                         value={orderNum}
                         src="https://cdn2.iconfinder.com/data/icons/picol-vector/32/view-512.png"
-                        height="15px"
-                        width="15px"
-                        className="view"
+                        alt="eye-view"
                       />
                     </td>
                   </tr>
@@ -372,86 +364,4 @@ const PastOrder = () => {
     </div>
   );
 };
-//JSX
-
-// return (
-// <div>
-//   <div className="list-container">
-//     <Header />
-//     <div>
-//       <section className="order-header">
-//         <article>
-//           <span>Order | {orderList.length} </span>
-//         </article>
-//         <article>
-//           <button id="create-button">
-//             <Link to="/createOrder">Create</Link>
-//           </button>
-//           <input type="search" />
-//         </article>
-//       </section>
-//     </div>
-//     <div className="tableFixHead">
-// <table className="past-order-table">
-//   <thead>
-//     <th> Order Id</th>
-//     <th>Order Date & Time</th>
-//     <th>Store Location</th>
-//     <th>City</th>
-//     <th>Store Phone</th>
-//     <th>Total Items</th>
-//     <th>Price</th>
-//     <th>Status</th>
-//     <th></th>
-//     <th>View</th>
-//   </thead>
-//   <tbody>
-//     {orderList.map((order, idx) => {
-//       return (
-//         <tr key={idx}>
-//           <td>
-//             {" "}
-//             <button onClick={displayOrder} value={order._id}>
-//               {order._id}
-//             </button>{" "}
-//           </td>
-//           <td>{order.dateTime}</td>
-//           <td>JP Nagar</td>
-//           <td>Bangalore</td>
-//           <td>9999999999</td>
-//           <td>{order.items}</td>
-//           <td>{order.price + fixedCharge}</td>
-//           <td>{order.status}</td>
-//           <td>
-//             {order.status !== "cancelled" ? (
-//               <button
-//                 onClick={cancel}
-//                 value={order._id}
-//                 id="cancel-btn"
-//               >
-//                 Cancel Order
-//               </button>
-//             ) : (
-//               ""
-//             )}
-//           </td>
-//           <td>
-//             <img
-//               src="https://cdn2.iconfinder.com/data/icons/picol-vector/32/view-512.png"
-//               height="15px"
-//               width="15px"
-//               className="view"
-//             />
-//           </td>
-//         </tr>
-//       );
-//     })}
-//   </tbody>
-// </table>
-//     </div>
-//   </div>
-//   <Copyright />
-// </div>
-//   )
-// };
 export default PastOrder;

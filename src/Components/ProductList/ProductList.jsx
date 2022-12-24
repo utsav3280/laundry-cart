@@ -57,7 +57,7 @@ function ProductList() {
   ]);
   useEffect(() => {
     console.log(data);
-  }, [data]);
+  });
   const washType = (opt, id) => {
     if (info[id].quantity !== "") {
       if (![...info][id].washOption.includes(opt)) {
@@ -129,16 +129,13 @@ function ProductList() {
   };
 
   const resetAll = () => {
-    window.location.reload();
+    for(let i=0; i<7; i++){
+      reset(i);
+    }
   };
 
   const sendData = async () => {
-    // setOpen(true);
     console.log("check");
-    // for (let i = 0; i < info.length; i++) {
-    //     if (info[i].quantity !== "") reqData.push(info[i]);
-    // }
-    //AXIOS
     if (data.length !== 0) {
       await axios.post("https://laundry-cart-backend-z3lt.onrender.com/orders/create", data, {
         headers: {
@@ -190,8 +187,6 @@ function ProductList() {
   const [alert, setAlert] = useState(false);
   const alertOpen = () => setAlert(true);
   const alertClose = () => setAlert(false);
-
-  //JSX
   return (
     <div id="main-pastorder">
       <Modal
@@ -214,7 +209,6 @@ function ProductList() {
           <Button
             sx={{ backgroundColor: "#5861AE" }}
             variant="contained"
-            // onClick={alertClose}
             onClick={sendData}
           >
             Go to orders
@@ -313,9 +307,6 @@ function ProductList() {
           </DialogActions>
         </div>
       </Dialog>
-      {/* <Dialog>
-        <DialogTitle>order placed successfully</DialogTitle>
-      </Dialog> */}
       <div>
         <Header />
         <div id="product-list-main">

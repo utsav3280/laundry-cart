@@ -127,17 +127,7 @@ function Register() {
         }
       })
       .catch((err) => console.log(err));
-
-    // localStorage.setItem("name", user.name);
-    // localStorage.setItem("email", user.email);
-    // localStorage.setItem("password", user.password);
-    // localStorage.setItem("phone", user.phone);
-    // localStorage.setItem("address", user.address);
-    // localStorage.setItem("state", user.state);
-    // localStorage.setItem("district", user.district);
-    // localStorage.setItem("pincode", user.pincode);
   };
-  const [ok, setOk] = useState(true);
 
   const locked = () => {
     setView(false);
@@ -161,7 +151,6 @@ function Register() {
           <Link to={"/"}>
             <button>Sign In</button>
           </Link>
-          {/* <div id="bdr"></div> */}
         </div>
         <div id="right_part">
           <h2>REGISTER</h2>
@@ -171,7 +160,6 @@ function Register() {
                 <TextField
                   error={err !== "" ? true : false}
                   onChange={handleChange}
-                  // placeholder={err !== "" ? "err" : ""}
                   value={user.name}
                   type="text"
                   name="name"
@@ -180,8 +168,7 @@ function Register() {
                   }}
                   label={err !== "" ? err : "Name"}
                   variant="standard"
-                />{" "}
-                {/* <p style={{ display: "block" }}>{err}</p> */}
+                />
                 <TextField
                   error={email !== "" ? true : false}
                   value={user.email}
@@ -250,7 +237,6 @@ function Register() {
                   sx={{
                     width: 300,
                   }}
-                  // label="State"
                   variant="standard"
                   label={st !== "" ? st : "State"}
                 />{" "}

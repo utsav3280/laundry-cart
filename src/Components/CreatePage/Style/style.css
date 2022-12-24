@@ -13,6 +13,7 @@
     color: #5861AE;
     border: 1px solid #5861AE;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .no-orders-text{

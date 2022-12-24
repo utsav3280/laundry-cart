@@ -1,16 +1,7 @@
-import blanket from "./Assets/blanket.png";
-import cloth from "./Assets/cloth.png";
-import jeans from "./Assets/jeans.png";
-import jogger from "./Assets/jogger-pants.png";
-import pants from "./Assets/pants.png";
-import shorts from "./Assets/shorts.png";
-import tshirt from "./Assets/tshirt.png";
-
 function Data() {
   return [
     {
       product: "Shirt",
-      // image: cloth,
       quantity: "",
       serviceSum: "-",
       washOption: [],
@@ -18,7 +9,6 @@ function Data() {
     },
     {
       product: "T shirt",
-      // image: tshirt,
       quantity: "",
       serviceSum: "-",
       washOption: [],
@@ -26,7 +16,6 @@ function Data() {
     },
     {
       product: "Trousers",
-      // image: pants,
       quantity: "",
       serviceSum: "-",
       washOption: [],
@@ -34,7 +23,6 @@ function Data() {
     },
     {
       product: "Jeans",
-      // image: jeans,
       quantity: "",
       serviceSum: "-",
       washOption: [],
@@ -42,7 +30,6 @@ function Data() {
     },
     {
       product: "Boxers",
-      // image: shorts,
       quantity: "",
       serviceSum: "-",
       washOption: [],
@@ -50,7 +37,6 @@ function Data() {
     },
     {
       product: "Joggers",
-      // image: jogger,
       quantity: "",
       serviceSum: "-",
       washOption: [],
@@ -58,7 +44,6 @@ function Data() {
     },
     {
       product: "Others",
-      // image: blanket,
       quantity: "",
       serviceSum: "-",
       washOption: [],

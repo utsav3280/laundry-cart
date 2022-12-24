@@ -24,13 +24,13 @@ export default function Logout({ showModal, setShowModal }) {
         >
           <Modal.Dialog>
             <Modal.Footer>
-              <Button variant="primary" onClick={logout} style={{padding: "5px", backgroundColor:"red", color:"white", border:"none", borderRadius: "2px", marginLeft: "5px"}}>
+              <Button variant="primary" onClick={logout} style={{padding: "5px", backgroundColor:"red", color:"white", border:"none", borderRadius: "2px", marginLeft: "5px", cursor: "pointer"}}>
                 Log out
               </Button>
               <Button
                 variant="secondary"
                 onClick={() => setShowModal((prev) => !prev)}
-                style={{padding: "5px", backgroundColor:"blue", color:"white", border:"none", borderRadius: "2px", marginLeft: "15px"}}
+                style={{padding: "5px", backgroundColor:"blue", color:"white", border:"none", borderRadius: "2px", marginLeft: "15px", cursor: "pointer"}}
               >
                 Close
               </Button>

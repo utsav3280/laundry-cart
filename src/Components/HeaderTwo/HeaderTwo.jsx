@@ -1,19 +1,12 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
 import "./Style/style.css";
 import Dialog from "../Dialog/Dialog";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 function Header() {
   const [showModal, setShowModal] = useState(false);
   const openModal = () => {
     setShowModal((prev) => !prev);
   };
-
-  // const displayName = async () => {
-  //   await axios.get();
-  // };
 
   return (
     <div>

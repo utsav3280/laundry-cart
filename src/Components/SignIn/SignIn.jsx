@@ -6,7 +6,7 @@ import "./Style/style.css";
 import Axios from "axios";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function SignIn() {
